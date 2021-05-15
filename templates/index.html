@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+
+        <script>
+            $(document).ready(function() {
+                function j_cmd(data, fun)
+                {
+                    $.post('/ajax', data, fun);
+                }
+
+                $('button.test').click(function() {
+                    j_cmd({
+                            'data' : 'test'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.Base_Anticlockwise').click(function() {
+                    j_cmd({
+                            'data' : 'test'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.test2').click(function() {
+                    j_cmd({
+                            'data' : 'test2'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+
+                })
+            })
+        </script>
+    </head>
+
+    <body>
+        <button class='Base_Anticlockwise'>Base Anticlockwise</button>
+        <button class='test2'>Base Clockwise</button>
+    </body>
+</html>
